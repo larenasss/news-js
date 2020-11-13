@@ -1,0 +1,13 @@
+@import '../helpers/variables';
+
+.header {
+  background-color: #008080;
+  padding: 20px;
+  margin-bottom: 15px;
+
+  &__title {
+    color: $color-white;
+    font-size: 40px;
+    text-align: center;
+  }
+}

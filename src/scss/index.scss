@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;800&display=swap');
+@import "~normalize.css";
+@import '/node_modules/spectre.css/dist/spectre.min.css';
+@import '/node_modules/spectre.css/dist/spectre-icons.min.css';
+
+// helpers
+@import './helpers/variables';
+
+// blocks
+@import './blocks/header.scss';
+@import './blocks/form.scss';
+
+body {
+  font-family: 'Dosis', sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+  min-height: 100vh;
+  background: var(--default-bg-color);
+  transition: .3s background ease-in-out, .3s color ease-in-out;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.content {
+  &__top {
+    margin-bottom: 30px;
+  }
+
+  &__body {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__tabs {
+    margin-bottom: 15px;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: inherit;
+}
+
+input {
+  color: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+// Модификации css фраемворка
+
+.card {
+  &_modify {
+    height: 100%;
+    box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, .15);
+    padding: 10px;
+  }
+}
+
+.spectre-auto-complete-container {
+  position: relative;
+}
+
+.spectre-auto-complete-container .menu {
+  position: absolute;
+  width: 100%;
+}
+
+.news {
+  & .column {
+    padding: .4rem;
+  }
+}
+
+.toast {
+  &_custom {
+    position: fixed;
+    width: auto;
+    bottom: 25px;
+    left: -100%;
+    transition: .4s left ease-in-out;
+
+    &.show {
+      left: 25px;
+      z-index: 100;
+    }
+  }
+}

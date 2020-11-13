@@ -1,0 +1,15 @@
+@import '../helpers/variables';
+
+.form {
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.form-group {
+  &_mt {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
