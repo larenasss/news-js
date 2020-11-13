@@ -12,21 +12,14 @@
 
 body {
   font-family: 'Dosis', sans-serif;
-  color: black;
+  color: $color-text;
   font-weight: 600;
   font-size: 16px;
   min-height: 100vh;
-  background: var(--default-bg-color);
-  transition: .3s background ease-in-out, .3s color ease-in-out;
 }
 
 .wrapper {
   position: relative;
-}
-
-.container {
-  max-width: 768px;
-  margin: 0 auto;
 }
 
 .content {
