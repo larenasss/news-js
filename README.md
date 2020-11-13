@@ -4,4 +4,4 @@
   * Поиск новостей по стране и категориям
   * Поиск по введенному значению
 
-Ссылка: () => https://larenasss.github.io/todo-js/dist
+Ссылка: () => https://larenasss.github.io/news-js/dist
