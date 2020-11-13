@@ -88,7 +88,6 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-
 // app
 const newsService = (function () {
   const apiKey = "ebcf8661ed97433fa9f4d00301d67550";
@@ -119,7 +118,8 @@ function onGetResponce(err, res) {
   }
 
   if (!res.articles.length) {
-    // ? Реализовать сообщение если новостей не найдено
+    const msg = "Новостей по вашему запросу не найдено :(";
+    showAlert(msg);
     return;
   }
 
@@ -144,9 +144,9 @@ function renderNews(news) {
     const el = newsTemplate(newsItem);
     fragment += el;
   });
-  
+
   newsContainer.insertAdjacentHTML("afterbegin", fragment);
-  
+
   const imgList = document.querySelectorAll(".img-responsive");
   imgList.forEach((img) => {
     img.onerror = () => img.setAttribute("src", `${imgPlug}`);
@@ -158,7 +158,7 @@ function newsTemplate({ urlToImage, title, url, description }) {
   return `
     <div class="column col-6 col-xs-12 col-sm-12">
       <div class="card card_modify">
-        <div class="card-image"><img class="img-responsive" src="${urlToImage}"></div>
+        <div class="card-image"><img class="img-responsive" loading="lazy" src="${urlToImage}"></div>
         <div class="card-header">
           <div class="card-title h5">${title || ""}</div>
         </div>
@@ -177,7 +177,7 @@ function clearContainer(container) {
 // Helpers
 
 // Функция показа ошибки
-function showAlert(msg, type = "toast-success") {
+function showAlert(msg, type = "") {
   const error = renderAlertTemplate(msg, type);
   const wrapper = document.querySelector(".wrapper");
   wrapper.insertAdjacentHTML("afterbegin", error);
@@ -192,7 +192,7 @@ function showAlert(msg, type = "toast-success") {
 }
 
 // Функция создания ошибоки
-function renderAlertTemplate(msg, type = "toast-success") {
+function renderAlertTemplate(msg, type = "") {
   return `
     <div class="toast toast_custom ${type}">
       ${msg}
